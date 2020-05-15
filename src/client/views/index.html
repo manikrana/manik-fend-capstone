@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <h3><b>Get Feedback on your content!</b></h3>
+            <section>
+                <form class="" onsubmit="return handleSubmit(event)">
+                    <input id="url" type="text" name="input" value="" placeholder="Enter a valid URL">
+                    <input type="submit" value="Get Results" onclick="return MLib.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    <div id="errorMessage"></div>
+                </form>
+            <section>
+
+            <section>
+                <strong>Form Results:</strong>
+                <div id="results">
+                    <div id="polarity"></div>
+                    <div id="polarity_confidence"></div>
+                    <div id="subjectivity"></div>
+                    <div id="subjectivity_confidence"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+
+    </body>
+</html>
