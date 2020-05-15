@@ -1,4 +1,4 @@
-const validateURL = require("./validateURL.js");
+import { validateURL } from "./validateURL.js";
 
 test("Validates the protocol and domain of a URL", () => {
   expect(validateURL("https://google.com")).toBe(true);

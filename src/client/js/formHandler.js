@@ -10,10 +10,13 @@ export function handleSubmit(event) {
   const enteredURL = document.getElementById("url").value;
 
   //validating URL
-  validateURL(enteredURL);
+  const validation = validateURL(enteredURL);
+  console.log(validation);
 
   //Invoke getSentiment function
-  getSentiment("/api", { url: `${enteredURL}` });
+  if (validation === true) {
+    getSentiment("/api", { url: `${enteredURL}` });
+  }
 }
 
 //Function that fetches response from Aylien API
@@ -43,29 +46,3 @@ const getSentiment = async (url = "", data = "") => {
     console.log("error", error);
   }
 };
-
-//validate URL
-function validateURL(url) {
-  let protocol = url.match(/^https?:\/\//g);
-
-  if (protocol === null) {
-    const invalidURL = document.createElement("h4");
-    invalidURL.innerHTML =
-      "Enter a valid protocol - Supported protocols are http:// or https://";
-    const messagePlaceholder = document.getElementById("errorMessage");
-    messagePlaceholder.appendChild(invalidURL);
-  } else {
-  }
-
-  let domain = url.match(/\./g);
-  if (domain === null) {
-    const invalidURL = document.createElement("h4");
-    invalidURL.innerHTML =
-      "Enter a valid domain - No period detected in the domain";
-    const messagePlaceholder = document.getElementById("errorMessage");
-    messagePlaceholder.appendChild(invalidURL);
-  } else {
-  }
-}
-
-//module.exports = validateURL;

@@ -219,7 +219,10 @@
               <em
                 ><b>
                   module: { rules: [ { test: '/\.js$/', exclude: /node_modules/,
-                  loader: "babel-loader" } ] }</b
+                  loader: "babel-loader" } ], {
+                    "targets": { "browsers": ["last 2 chrome versions"] },
+                    "useBuiltIns": "usage"
+                  } }</b
                 ></em
               >
             </p>
