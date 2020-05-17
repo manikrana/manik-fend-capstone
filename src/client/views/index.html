@@ -3,6 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+              $( "#date" ).datepicker();
+            } );
+        </script>
     </head>
 
     <body>
@@ -20,8 +28,12 @@
             <h3><b>Get Feedback on your content!</b></h3>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="url" type="text" name="input" value="" placeholder="Enter a valid URL">
-                    <input type="submit" value="Get Results" onclick="return MLib.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    <div id="cityPhoto"></div>
+                    <label for="city">City Name:</label>
+                    <input id="city" type="text" name="city" value="" placeholder="Where do you plan to go?!">
+                    <label for="date">When do you plan to go?</label>
+                    <input type="text" id="date" placeholder="Select a Date">
+                    <input type="submit" value="Plan Trip" onclick="return MLib.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                     <div id="errorMessage"></div>
                 </form>
             <section>
