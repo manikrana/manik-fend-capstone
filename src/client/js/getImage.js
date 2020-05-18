@@ -12,7 +12,7 @@ export async function getImage(pb_URL, pb_APIKey, city) {
     img.setAttribute("width", "100%");
     const cityPhoto = document.getElementById("cityPhoto");
     cityPhoto.appendChild(img);
-    console.log("Image set!");
+    return "Image has been set";
   } catch (error) {
     console.log("error", error);
   }

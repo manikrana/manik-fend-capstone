@@ -1,13 +1,12 @@
+import { showWeatherInfo } from "./showWeather";
+
 export function handleSubmit(event) {
   event.preventDefault();
 
-  //function-scope variables
+  //global scope variables
   let validation = true;
   let validDate = true;
-
-  //Weathebit API details
-  const wb_URL = "https://api.weatherbit.io/v2.0/current?city=";
-  const wb_APIKey = "&key=f3d70e82e35143f293346d32719bee9f";
+  let weatherData = {};
 
   //Pixabay API details
   const pb_URL = "https://pixabay.com/api/";
@@ -20,6 +19,9 @@ export function handleSubmit(event) {
   while (document.getElementById("cityPhoto").firstElementChild !== null) {
     document.getElementById("cityPhoto").firstElementChild.remove();
   }
+  while (document.getElementById("tripDetails").firstElementChild !== null) {
+    document.getElementById("tripDetails").firstElementChild.remove();
+  }
 
   //Store the URL entered by the user
   const city = document.getElementById("city").value;
@@ -31,18 +33,21 @@ export function handleSubmit(event) {
   validation = MLib.fieldChecker(city, date);
   if (validation == true && validDate == true) {
     //invoke Weatherbit API
-    const weatherInfo = MLib.getWeather(wb_URL, city, wb_APIKey)
-      .then()
-      .catch((error) => {
-        console.log("error", error);
-      });
+    MLib.getWeather(city)
+      .then((result) => {
+        weatherData = result;
+        console.log("inside get weather", weatherData);
+      })
+      .then(MLib.showWeather(date, weatherData));
 
     //store city name in server endpoint
     MLib.postCityDate("/postCityDate", { city: city, date: date });
 
     //invoke get image from Pixabay API
-    const image = MLib.getImage(pb_URL, pb_APIKey, city)
-      .then()
+    MLib.getImage(pb_URL, pb_APIKey, city)
+      .then((result) => {
+        console.log(result);
+      })
       .catch((error) => {
         console.log("error", error);
       });

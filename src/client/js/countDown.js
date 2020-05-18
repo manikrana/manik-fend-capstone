@@ -19,5 +19,13 @@ export function countDown(city, date) {
     errorMessagePlaceholder.appendChild(errorMessage);
     return false;
   }
+  const daysMessage = document.createElement("h3");
+  if (daysToGo === 1) {
+    daysMessage.innerHTML = `${city} is ${daysToGo} day away!`;
+  } else {
+    daysMessage.innerHTML = `${city} is ${daysToGo} days away!`;
+  }
+  const section = document.getElementById("tripDetails");
+  section.appendChild(daysMessage);
   return true;
 }
