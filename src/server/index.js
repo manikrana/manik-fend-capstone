@@ -38,13 +38,15 @@ app.listen(8085, function () {
 });
 
 //global variables
-let city = "";
+let allData = {};
 const pb_URL = "";
 
 //store city name
-app.post("/postCity", postCity);
+app.post("/postCityDate", postCityDate);
 
-function postCity(req, res) {
-  city = req.body.city;
-  console.log(city);
+function postCityDate(req, res) {
+  //console.log(req.body);
+  allData = req.body;
+  console.log(allData);
+  res.send(allData);
 }
