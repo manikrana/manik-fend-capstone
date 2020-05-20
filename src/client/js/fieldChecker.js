@@ -3,7 +3,7 @@ export function fieldChecker(city, date) {
   let validation = false;
   if (city == "") {
     const errorMessagePlaceholder = document.getElementById("errorMessage");
-    const errorMessage = document.createElement("h4");
+    const errorMessage = document.createElement("h2");
     errorMessage.innerHTML = "Please enter a valid city";
     errorMessagePlaceholder.appendChild(errorMessage);
   } else {
@@ -11,7 +11,7 @@ export function fieldChecker(city, date) {
   }
   if (date == "") {
     const errorMessagePlaceholder = document.getElementById("errorMessage");
-    const errorMessage = document.createElement("h4");
+    const errorMessage = document.createElement("h2");
     errorMessage.innerHTML = "Please enter a date";
     errorMessagePlaceholder.appendChild(errorMessage);
     validation = false;

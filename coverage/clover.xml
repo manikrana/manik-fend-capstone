@@ -1,34 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1589553324898" clover="3.2.0">
-  <project timestamp="1589553324898" name="All files">
-    <metrics statements="25" coveredstatements="14" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1" elements="32" coveredelements="19" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1"/>
-    <file name="validateURL.js" path="C:\Users\manik\web-dev\fend-refresh-2019\fend-refresh-2019\projects\manik-evaluate-news-nlp\src\client\js\validateURL.js">
-      <metrics statements="25" coveredstatements="14" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
-      <line num="3" count="3" type="stmt"/>
-      <line num="4" count="3" type="cond" truecount="1" falsecount="1"/>
-      <line num="5" count="0" type="stmt"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="8" count="0" type="stmt"/>
-      <line num="9" count="0" type="stmt"/>
-      <line num="10" count="0" type="stmt"/>
-      <line num="12" count="3" type="stmt"/>
-      <line num="13" count="3" type="stmt"/>
-      <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="23" count="2" type="stmt"/>
-      <line num="26" count="2" type="stmt"/>
-      <line num="27" count="2" type="cond" truecount="1" falsecount="1"/>
-      <line num="28" count="0" type="stmt"/>
-      <line num="29" count="0" type="stmt"/>
-      <line num="31" count="0" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="35" count="2" type="stmt"/>
-      <line num="38" count="2" type="stmt"/>
-    </file>
+<coverage generated="1589964350580" clover="3.2.0">
+  <project timestamp="1589964350580" name="All files">
+    <metrics statements="52" coveredstatements="47" conditionals="6" coveredconditionals="4" methods="6" coveredmethods="4" elements="64" coveredelements="55" complexity="0" loc="52" ncloc="52" packages="2" files="2" classes="2"/>
+    <package name="client.js">
+      <metrics statements="23" coveredstatements="22" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="countDown.js" path="C:\Users\manik\web-dev\fend-refresh-2019\fend-refresh-2019\projects\manik-fend-capstone\src\client\js\countDown.js">
+        <metrics statements="23" coveredstatements="22" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="15" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="server">
+      <metrics statements="29" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+      <file name="index.js" path="C:\Users\manik\web-dev\fend-refresh-2019\fend-refresh-2019\projects\manik-fend-capstone\src\server\index.js">
+        <metrics statements="29" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

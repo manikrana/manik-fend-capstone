@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" content="width=device-width, initial-scale=1.0">
         <title>Test</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -13,37 +13,56 @@
         </script>
     </head>
 
-    <body>
+    <body class = "container">
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
+        <header class="header">
+                Travel Planner
             </div>
         </header>
 
-        <main>
+        <div class="sidebar">
+            <div id="cityPhoto"></div>
+        </div>
+
+        <main class="main">
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <div id="cityPhoto"></div>
-                    <label for="city">City Name:</label>
-                    <input id="city" type="text" name="city" value="" placeholder="Where do you plan to go?!">
-                    <label for="date">When do you plan to go?</label>
+                <div id="cityHolder" class="cityInput">
+                    <label for="city">City Name : </label><br>
+                    <input id="city" type="text" name="city" value="" placeholder="Where do you plan to go?">
+                </div>
+                <div id="dateHolder" class="dateInput">
+                    <label for="date">When do you plan to go? </label><br>
                     <input type="text" id="date" placeholder="Select a Date">
-                    <input type="submit" value="Plan Trip" onclick="return MLib.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                    <div id="errorMessage"></div>
+                </div>
+                <div class="buttonHolder">
+                    <button type="submit" onclick="return MLib.handleSubmit(event)" onsubmit="return handleSubmit(event)">Plan Trip</button>
+                </div>
+                    <div id="errorMessage" class="errorMessage"></div>
                 </form>
             <section>
-
-            <section id="tripDetails">
+            
+            <section id="daysAway"></section>
+            <section id="tripDetails" class="tripDetails">
             </section>
+            
+            <div id="saveTripHolder" class='saveTripHolder'>
+                <button id="saveTrip">Save Trip</button>
+            </div>
         </main>
 
-        <footer>
-            <p>This is a footer</p>
+        <footer class="footer">
         </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ("serviceWorker" in navigator) {
+              // Use the window load event to keep the page load performant
+              window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/service-worker.js");
+              });
+            }
+          </script>
 
     </body>
 </html>

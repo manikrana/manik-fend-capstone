@@ -14,18 +14,19 @@ export function countDown(city, date) {
 
   if (daysToGo <= 0) {
     const errorMessagePlaceholder = document.getElementById("errorMessage");
-    const errorMessage = document.createElement("h4");
+    const errorMessage = document.createElement("h2");
     errorMessage.innerHTML = "Please pick a date starting tomorrow!";
     errorMessagePlaceholder.appendChild(errorMessage);
     return false;
   }
-  const daysMessage = document.createElement("h3");
+  const daysMessage = document.createElement("h2");
   if (daysToGo === 1) {
     daysMessage.innerHTML = `${city} is ${daysToGo} day away!`;
-  } else {
+  }
+  if (daysToGo > 1) {
     daysMessage.innerHTML = `${city} is ${daysToGo} days away!`;
   }
-  const section = document.getElementById("tripDetails");
+  const section = document.getElementById("daysAway");
   section.appendChild(daysMessage);
   return true;
 }

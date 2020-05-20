@@ -1,0 +1,109 @@
+.container {
+  display: grid;
+  width: screen-width;
+  height: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 2fr 3fr 1fr;
+  grid-template-areas: "hd" "main" "sdbr" "ft";
+  grid-gap: 2px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    width: screen-width;
+    height: auto;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas: "hd hd" "main sdbr" "ft ft";
+    grid-gap: 2px;
+  }
+}
+
+.header {
+  display: flex;
+  grid-area: hd;
+  padding: 50px;
+  width: 100%;
+  height: auto;
+  color: white;
+  font-family: "Merriweather", serif;
+  font-size: 3em;
+  align-items: center;
+}
+
+.sidebar {
+  grid-area: sdbr;
+  padding: 100px;
+  width: 100%;
+  height: auto;
+  color: white;
+  font-family: "Merriweather", serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  grid-area: main;
+  padding: 50px;
+  width: 100%;
+  height: auto;
+  color: white;
+  font-family: "Merriweather", serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  grid-area: ft;
+  padding: 25px;
+  width: 100%;
+  height: auto;
+  color: white;
+  font-family: "Merriweather", serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.cityInput {
+  padding: 25px;
+  width: 100%;
+  height: auto;
+}
+
+.dateInput {
+  padding: 25px;
+  width: 100%;
+  height: auto;
+}
+
+.buttonHolder {
+  padding: 25px;
+}
+
+.cityHolder {
+  display: flex;
+  justify-content: center;
+}
+
+.dateHolder {
+  display: flex;
+  justify-content: center;
+}
+
+.tripDetails {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.saveTripHolder {
+  padding: 25px;
+  display: none;
+}
+
+.errorMessage {
+  padding: 20px;
+  line-height: 1.2;
+  color: salmon;
+}

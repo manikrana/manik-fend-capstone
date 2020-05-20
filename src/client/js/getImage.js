@@ -1,5 +1,9 @@
+//Pixabay API details
+const pb_URL = "https://pixabay.com/api/";
+const pb_APIKey = "?key=16569778-f85657fdbba69befc56f6a812&q=";
+
 //function that fetches image from Pixabay API
-export async function getImage(pb_URL, pb_APIKey, city) {
+export async function getImage(city) {
   console.log("Inside Pixabay API fetch request");
   const response = await fetch(
     pb_URL + pb_APIKey + city + "&imagetype=photo&category=travel"

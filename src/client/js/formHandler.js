@@ -1,4 +1,5 @@
-import { showWeatherInfo } from "./showWeather";
+let city = "";
+let date = "";
 
 export function handleSubmit(event) {
   event.preventDefault();
@@ -7,10 +8,8 @@ export function handleSubmit(event) {
   let validation = true;
   let validDate = true;
   let weatherData = {};
-
-  //Pixabay API details
-  const pb_URL = "https://pixabay.com/api/";
-  const pb_APIKey = "?key=16569778-f85657fdbba69befc56f6a812&q=";
+  let lat = 0;
+  let long = 0;
 
   //Clear the previous data
   while (document.getElementById("errorMessage").firstElementChild !== null) {
@@ -23,28 +22,41 @@ export function handleSubmit(event) {
     document.getElementById("tripDetails").firstElementChild.remove();
   }
 
+  while (document.getElementById("daysAway").firstElementChild !== null) {
+    document.getElementById("daysAway").firstElementChild.remove();
+  }
+
   //Store the URL entered by the user
-  const city = document.getElementById("city").value;
-  const date = document.getElementById("date").value;
+  city = document.getElementById("city").value;
+  date = document.getElementById("date").value;
 
   //invoke CountDown function
   validDate = MLib.countDown(city, date);
 
   validation = MLib.fieldChecker(city, date);
   if (validation == true && validDate == true) {
-    //invoke Weatherbit API
-    MLib.getWeather(city)
+    //get proper city name and latLong from Geonames API
+    MLib.getLatLong(city)
       .then((result) => {
-        weatherData = result;
-        console.log("inside get weather", weatherData);
+        return result;
       })
-      .then(MLib.showWeather(date, weatherData));
+      .then(function (result) {
+        city = result.geonames[0].name + ", " + result.geonames[0].countryCode;
+        lat = result.geonames[0].lat;
+        long = result.geonames[0].lng;
+        console.log(city, lat, long);
+        return MLib.getWeather(lat, long);
+      })
+      .then((result) => {
+        console.log(result);
+        MLib.showWeather(date, result);
+      });
 
     //store city name in server endpoint
-    MLib.postCityDate("/postCityDate", { city: city, date: date });
+    //MLib.postCityDate("/postCityDate", { city: city, date: date });
 
     //invoke get image from Pixabay API
-    MLib.getImage(pb_URL, pb_APIKey, city)
+    MLib.getImage(city)
       .then((result) => {
         console.log(result);
       })
@@ -52,4 +64,14 @@ export function handleSubmit(event) {
         console.log("error", error);
       });
   }
+}
+
+document.getElementById("saveTrip").addEventListener("click", saveTrip);
+
+export function saveTrip() {
+  //store city name in server endpoint
+  MLib.postCityDate("/postCityDate", {
+    city: city,
+    date: date,
+  });
 }

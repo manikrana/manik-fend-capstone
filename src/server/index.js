@@ -32,6 +32,8 @@ app.get("/", function (req, res) {
   res.sendFile("dist/index.html");
 });
 
+module.exports = app;
+
 // designates what port the app will listen to for incoming requests
 app.listen(8085, function () {
   console.log("Example app listening on port 8085!");
@@ -50,3 +52,7 @@ function postCityDate(req, res) {
   console.log(allData);
   res.send(allData);
 }
+
+app.get("/simpletest", (req, res) => {
+  res.send({ movie: "Titanic" });
+});
