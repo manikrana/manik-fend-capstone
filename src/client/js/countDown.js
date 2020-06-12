@@ -12,6 +12,7 @@ export function countDown(city, date) {
     (Date.parse(date) - Date.parse(today)) / (1000 * 60 * 60 * 24);
   console.log(city, " is ", daysToGo, " days away!");
 
+  //update UI
   if (daysToGo <= 0) {
     const errorMessagePlaceholder = document.getElementById("errorMessage");
     const errorMessage = document.createElement("h2");
